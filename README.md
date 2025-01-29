@@ -45,4 +45,14 @@ Tienen la capacidad de gestionar los reclamos, interactuar con los ciudadanos, p
 ## -Administradores:
 Administran los contenidos del sistema, incluyendo la creación, edición y eliminación de eventos y noticias.
 
+# LA APLICACION WEB PUEDES USARLAR TRANQUILAMENTE REGISTRANDOTE Y LUEGO VERAS SU POTENCIAL... 
+
+## TIPS DE LA APP WEB PARA QUE VEAS SU FUNCIONAMIENTO:
+
+## los numeros disponibles de la app web para autogestionarte y ver una boleta son:
+-118159
+-746382
+
+
+![Logo de Urbanagest](https://urbanagest.tecnica3.com.ar/img/system/UrbanaGest%20(3).png)
 [Visita el sitio de Urbanagest](https://urbanagest.tecnica3.com.ar/)
