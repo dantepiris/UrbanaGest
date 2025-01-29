@@ -9,7 +9,7 @@ Urbanagest es un sistema de autogestión municipal que permite a los ciudadanos 
 
 -Proyecto personal.
 
--framework Creado por mi.
+-framework Creado por mi (MVC).
 
 -Manejo de Mysql.
 
