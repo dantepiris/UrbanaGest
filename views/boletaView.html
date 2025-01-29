@@ -1,0 +1,148 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+<link rel="stylesheet" type="text/css" href="views/static/css/inmuebles.css">
+        </head>
+
+<body>
+
+@extern('header')   
+<!--{{email}} -->
+
+@extern('menu') 
+@extern('menucelular')  
+
+
+    
+    
+    
+   
+
+    <main class="scroll-y altura-max">
+    <a href="panel">
+      <section class="TituloEventos">
+
+        <div class="iconos black icono_l">
+          arrow_back_ios
+
+        </div>
+        <span class="black">Volver</span>
+    </a>
+    </section>
+    <div class="contInmueble">
+      <div class="contPeque">
+        <div class="contRedondo">
+          <div class="icono_redondo">
+            <i class="fa-sharp-duotone fa-solid fa-house-circle-check"></i>
+          </div>
+        </div>
+        <div class="contTexto">
+          <div class="textoNegro">
+            Inmuebles
+          </div>
+          <div class="textoGris">
+            CVP
+          </div>
+        </div>
+      </div>
+      <div class="contGrande">
+        <div class="textoGrande">
+          Ingresa el numero de partida del inmueble y hacé click en continuar. La podés encontrar en tu boleta de tasa
+          municipal como <b>Número de Partida</b>
+           <!-- aca se muestra los errores -->
+    <div id="alert"> </div>
+        </div>
+        <div class="input">
+          <div class="wave-group">
+            <input required="" type="text" name="txt_nro_residencia" id="nroresidencia" class="input"> 
+            <span class="bar"></span>
+            <label class="label">
+              <span class="label-char" style="--index: 0">N</span>
+              <span class="label-char" style="--index: 1">°</span>
+              <span class="label-char" style="--index: 2">P</span>
+              <span class="label-char" style="--index: 3">a</span>
+              <span class="label-char" style="--index: 4">r</span>
+              <span class="label-char" style="--index: 5">t</span>
+              <span class="label-char" style="--index: 6">i</span>
+              <span class="label-char" style="--index: 7">d</span>
+              <span class="label-char" style="--index: 8">a</span>
+            </label>
+          </div>
+
+        </div>
+        <input class="continuar" type="submit" value="continuar">
+        <!-- <div id="buton"></div> -->
+      </div>
+      <div class="misInmueblesTexto">Mis inmuebles registrados</div>
+      <section class="misInmuebles">
+        <div class="inmuebleCard ">
+          <div class="cardHead">
+            <div class="cardHeadIzq">
+              <div class="cardRedondo">
+                <i class="fa-sharp-duotone fa-solid fa-house-circle-check"></i>
+              </div>
+            </div>
+            <div class="cardText">Inmuebles</div>
+          </div>
+          <div class="cardBody">
+            <div class="cardBody_text">Partida municipal Nro: <b>118154</b></div>
+            <div class="cardBody_text"><b>Titular:</b> Maldonado Maria Vanina</div>
+            <div class="cardBody_text"><b>Domicilio:</b> L. Vernet 1615 -Grand Bourg</div>
+            <div class="cardBody_boton_cont">
+              <a href="iinmueblecomp.html" class="cardBody_boton">Ver Detalle</a>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
+  </main>
+
+    <script src="views/js/buscador.js"></script>
+
+   <script type="text/javascript">
+    // Agregar evento al formulario para capturar el valor y redireccionar
+    document.querySelector('.continuar').addEventListener("click", function(event) {
+        event.preventDefault();  // Evitar que se envíe el formulario de inmediato
+
+        var nroResidencia = document.getElementById('nroresidencia').value;
+        var alertDiv = document.getElementById('alert');
+
+        if (nroResidencia === "") {
+            alertDiv.innerHTML = 'Por favor, ingrese el número de residencia.';
+            return;
+        }
+
+        // Llamar a la función boleta y manejar la respuesta
+        boleta(nroResidencia).then((data) => {
+            if (data.length != 0) {
+                // Redireccionar a la URL con el parámetro
+                window.location.href = `mostrarboleta?txt_nro_residencia=${nroResidencia}`;
+            } else {
+                alertDiv.innerHTML = 'No se encontró ninguna boleta para el número de residencia ingresado.';
+            }
+
+            console.log(data);
+        }).catch((error) => {
+            alertDiv.innerHTML = 'Ocurrió un error al consultar la boleta.';
+            console.error(error);
+        });
+    });
+
+    // Función asíncrona para obtener los datos de la API
+    async function boleta(nroResidencia) {
+        try {
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/users/boleta/?nroresidencia=${nroResidencia}`);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error al consultar la API:', error);
+            return [];
+        }
+    }
+</script>
+
+
+@extern('footer')

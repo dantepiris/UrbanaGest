@@ -1,0 +1,142 @@
+
+<link rel="stylesheet" type="text/css" href="views/static/css/portal.css">
+<link rel="stylesheet" type="text/css" href="views/static/css/tarjeta.css">
+<link rel="stylesheet" type="text/css" href="views/static/css/material-iconss-d.css">
+
+
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+		</head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')	
+<!-- {{PROJECT_SECTION}}{{email}} -->
+
+@extern('menu')	
+@extern('menucelular')	
+
+	
+
+			
+				
+					
+				<a href="perfil" class="btn__register">Perfil</a>
+				<a href="logout" class="btn__register">Cerrar sesión</a>
+			
+
+ <main class="scroll-y altura-max">
+
+        <div class="contenedor ">
+
+            <div class="logo">
+                <img class="img" src="img/system/URBANA (1920 x 655 px) (3).png" alt="">
+
+            </div>
+        </div>
+
+        <div class="tit"></div>
+
+        <div class="container">
+                <div class="nose">
+                    <div class="contenedor-tarjetas">
+
+                    <a class="tarjeta" data-title="Inmuebles" href="boleta">
+                        <div class="card " >
+                            <div class="icono"><i class="fa-solid fa-house"></i></div>
+                            <h3>Inmuebles</h3>
+                            <p class="small">C.V.P</p>
+                            <p class="small">Vivienda y </p>
+                            <p class="small">terrenos</p>
+
+                            <div class="go-corner" href="#">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="tarjeta" data-title="Autos" href="inmuebles.html">
+                        <div class="card">
+                            <div class="icono"><i class="fa-solid fa-car"></i></div>
+                            <h3>Autos</h3>
+                            <p class="small">Patente<br>Rodado</p>
+
+                            <div class="go-corner" href="#">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="tarjeta" data-title="Motos" href="inmuebles.html">
+                        <div class="card">
+                            <div class="icono"><i class="fa-solid fa-motorcycle"></i></div>
+                            <h3>Motos</h3>
+                            <p class="small">Patente<br>Rodado</p>
+
+                            <div class="go-corner" href="#">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="tarjeta" data-title="Comercio" href="inmuebles.html">
+                        <div class="card">
+                            <div class="icono"><i class="fa-solid fa-shop"></i></div>
+                            <h3>Comercio</h3>
+                            <p class="small">S.&H.</p>
+                            <p class="small">Pago Mensual</p>
+                            <div class="go-corner" href="#">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="tarjeta" data-title="Grandes" href="inmuebles.html">
+                        <div class="card">
+                            <div class="icono"><i class="fa-solid fa-industry"></i></div>
+                            <h3>Grandes</h3>
+                            <p class="small">S.&H.</p>
+                            <p class="small">Pago Bimestral</p>
+                            <p class="small">Que presentan</p>
+                            <p class="small">DDJJ</p>
+
+                            <div class="go-corner" href="#">
+                                <div class="go-arrow">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+                
+            </div>
+        </div>
+        <div class="nose"></div>
+    </main>
+
+     <script src="views/js/buscador.js"></script>
+     
+      <script>
+
+    let sidenavMenu = document.querySelector('#sidenav')
+
+    function DisplaySIdenav() {
+      sidenavMenu.classList.add('mostrar')
+    }
+    function ocultarSidenav() {
+      sidenavMenu.classList.remove('mostrar')
+    }
+
+  </script>
+
+	@extern('footer')

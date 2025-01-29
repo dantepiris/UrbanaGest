@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Registro - {{PROJECT_NAME}}</title>
+    <style>
+     body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #b7b8b83f;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e0e0e0;
+}
+
+.header {
+    
+    background-color:lightblue;
+    border-radius: 8px 8px 0 0;
+    color: #ffffff;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+
+    .img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenedor_logo{
+        width: 416px;
+        height: 114px;
+    }
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.content {
+    padding: 20px 10px;
+}
+
+.content p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.button {
+    display: block;
+    width: 220px;
+    margin: 25px auto;
+    padding: 12px 0;
+    background-color: lightblue;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: lightblue;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 15px 0;
+    border-top: 1px solid #e0e0e0;
+}
+    </style>
+</head>
+<body>
+
+	<!-- {{PROJECT_NAME}} -->
+<!-- {{PROJECT_DESCRIPTION}} -->
+<!-- {{PROJECT_AUTHOR}} -->
+<!-- {{PROJECT_AUTHOR_CONTACT}} -->
+<!-- {{PROJECT_WEB}} -->
+<!-- {{PROJECT_KEYWORDS}} -->
+<!-- {{PROJECT_MODE}} -->
+
+     <div class="container">
+        <div class="header">
+            <div class="contenedor_logo">
+                <img class="img" src="/register_img.jpg" alt="">
+
+            </div>
+        </div>
+        <div class="content">
+            <p>¡Hola!</p>
+            <p>Gracias por unirte a <strong>{{PROJECT_NAME}}</strong>. Para completar tu registro y empezar a gestionar tus servicios municipales de forma eficiente, por favor verifica tu dirección de correo electrónico haciendo clic en el botón de abajo:</p>
+            <a href="{{PROJECT_WEB}}/api/Users/verify/?token={{EMAIL_TOKEN}}" class="button">Verificar Email</a>
+            <p>Si no te registraste en <strong>{{PROJECT_NAME}}</strong>, puedes ignorar este correo electrónico.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 {{PROJECT_NAME}}. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

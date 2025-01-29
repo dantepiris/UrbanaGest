@@ -1,0 +1,170 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+
+<link rel="stylesheet" type="text/css" href="views/static/css/agregarevento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+
+    </head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')
+<a href="paneladmin">panel noticias</a>
+<a href="crearadmin">crear noticias</a>
+
+		<a href="vereventos">ver eventos</a>
+
+
+
+
+
+
+
+
+
+<!-- <main>
+
+	<form method="POST">
+	
+	titulo:<br>< placeholder="ingrese titulo del evento"><br>
+
+	fecha:<br><input type="text" name="txt_fecha" placeholder="ingrese fecha del evento"><br>
+
+	horario inicio:<br><input type="time" name="txt_time" placeholder="ingrese horario del evento"><br>
+
+	horario finalizacion:<br><input type="time" name="txt_time_final" placeholder="ingrese horario final del evento"><br>
+
+	ubicacion:<br><input type="text" name="txt_ubicacion" placeholder="ingrese ubicacion"><br>
+
+	imagen:<br><input type="text" name="txt_img" placeholder="ingrese url img"><br>
+
+	<input type="submit" name="btn_evento">
+</form>
+	
+
+</main>
+ -->
+
+  <main>
+      <form method="POST" class="contenedor">
+            <div class="titulo">
+                Agregar evento
+            </div>
+            <div class="wave-group">
+
+                <input required="" name="txt_titulo" type="text" class="input">
+
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">N</span>
+                  <span class="label-char" style="--index: 1">o</span>
+                  <span class="label-char" style="--index: 2">m</span>
+                  <span class="label-char" style="--index: 3">b</span>
+                  <span class="label-char" style="--index: 3">r</span>
+                  <span class="label-char" style="--index: 3">e</span>
+                </label>
+              </div>
+            
+              <div class="wave-group">
+                <input required="" name="txt_fecha" type="text" class="input">
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">F</span>
+                  <span class="label-char" style="--index: 1">e</span>
+                  <span class="label-char" style="--index: 2">c</span>
+                  <span class="label-char" style="--index: 3">h</span>
+                  <span class="label-char" style="--index: 4">a</span>
+               
+        
+                </label>
+              </div>
+              <div class="wave-group">
+                <input required="" type="text" name="txt_des" class="input">
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">D</span>
+                  <span class="label-char" style="--index: 1">e</span>
+                  <span class="label-char" style="--index: 2">s</span>
+                  <span class="label-char" style="--index: 3">c</span>
+                  <span class="label-char" style="--index: 4">r</span>
+                  <span class="label-char" style="--index: 5">i</span>
+                  <span class="label-char" style="--index: 6">p</span>
+                  <span class="label-char" style="--index: 7">c</span>
+                  <span class="label-char" style="--index: 8">i</span>
+                  <span class="label-char" style="--index: 9">o</span>
+                  <span class="label-char" style="--index: 10">n</span>
+                </label>
+              </div>
+              <div class="wave-group">
+                <input required="" name="txt_ubicacion" type="text" class="input">
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">U</span>
+                  <span class="label-char" style="--index: 1">b</span>
+                  <span class="label-char" style="--index: 2">i</span>
+                  <span class="label-char" style="--index: 2">c</span>
+                  <span class="label-char" style="--index: 2">a</span>
+                  <span class="label-char" style="--index: 2">c</span>
+                  <span class="label-char" style="--index: 2">i</span>
+                  <span class="label-char" style="--index: 2">o</span>
+                  <span class="label-char" style="--index: 2">n</span>
+                </label>
+              </div>
+              <div class="wave-group">
+                <input required="" name="txt_img"  type="text" class="input">
+                <span class="bar"></span>
+                <label class="label">
+                  <span class="label-char" style="--index: 0">U</span>
+                  <span class="label-char" style="--index: 1">r</span>
+                  <span class="label-char" style="--index: 2">l</span>
+                </label>
+              </div>
+              <div class="wave-time-group">
+                <input required type="time" name="txt_time" class="time-input" value="00:00">
+                <span class="time-bar"></span>
+                <label class="time-label">
+                  <span class="time-label-char" style="--index: 0">I</span>
+                  <span class="time-label-char" style="--index: 1">n</span>
+                  <span class="time-label-char" style="--index: 2">i</span>
+                  <span class="time-label-char" style="--index: 3">c</span>
+                  <span class="time-label-char" style="--index: 4">i</span>
+                  <span class="time-label-char" style="--index: 5">o</span>
+                  
+                </label>
+              </div>
+              <div class="wave-time-group">
+                <input required type="time" name="txt_time_final" class="time-input" value="00:00">
+                <span class="time-bar"></span>
+                <label class="time-label">
+                  <span class="time-label-char" style="--index: 0">F</span>
+                  <span class="time-label-char" style="--index: 1">i</span>
+                  <span class="time-label-char" style="--index: 2">n</span>
+              
+                  
+                </label>
+              </div>
+            <div class="botonera">
+                <input type="submit" name="btn_evento" class="boton">
+            </div>
+
+    
+
+          </form>
+    </main>
+
+
+@extern('footer')	

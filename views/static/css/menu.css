@@ -1,0 +1,710 @@
+:root {
+    --color-1--: #39B7CD;
+    --color-2--: #34A6BA;
+    --color-3--: #3284B1;
+    --color-4--: #2F62A8;
+    --color-5--: #033346;
+    --color-6--: #3CBF7C;
+    --color-7--: #3EC62B;
+    --color-8--: #7ED957;
+    --color-9--: #60D050;
+    --color-10--: rgb(19, 98, 216);
+    --headerH: 60px;
+
+}
+
+.scroll-y {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+
+
+.altura-max {
+    max-height: calc(100vh - var(--headerH));
+}
+
+
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 100%;
+    height: 139px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+
+    .barra {
+        height: 68%;
+        width: 100%;
+        display: flex;
+        position: relative;
+        padding-right: 3%;
+        padding-left: 5%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icono{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: solid 1px  #606060;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+    }
+
+    .abajo {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+    }
+
+    
+    .botones {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            color: #606060;
+        }
+    }
+
+    .logo {
+        margin-left: 10px;
+        height: 100%;
+        width: 229px;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        font-family: "Slabo 27px", serif;
+        color: black;
+
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    .fa-thin,
+    .fat {
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.788);
+    }
+    
+.color-button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #606060;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.color-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color:#99c71a;
+    transition: width 0.3s ease;
+}
+
+.color-button:hover::after {
+    width: 100%;
+}
+
+.color-button:hover {
+    transform: translateY(-5px); /* El texto se mueve hacia arriba */
+}
+
+}
+
+
+.nose{
+    width: 100%;
+    height: 100px;
+}
+
+.conte_btn{
+    width: 100%;
+    justify-content: end;
+    display: flex;
+
+    .btn-cerrar {
+        background-color: #000000;
+        color: white;
+        border: none; 
+        border-radius: 50%;
+        width: 40px; 
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer; 
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    }
+    
+    .btn-cerrar:hover {
+        background-color: #ff1a1a; 
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);  
+    }
+    
+}
+
+footer {
+    margin-top: none;
+    width: 100%;
+    height: 450px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+
+    .tres {
+        height: 100%;
+        width: 34%;
+        background-color: #033346;
+
+
+        .tit {
+            display: flex;
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+            align-items: center;
+
+
+            .letra {
+                display: flex;
+                width: 90%;
+                height: 72%;
+                border-bottom: 1px solid white;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+        }
+
+        .contenedor-cuadrado {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2%;
+
+            .lugar {
+                width: 80%;
+                height: 13%;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                border: solid 1px white;
+
+
+                .iconos {
+                    height: 100%;
+                    width: 17%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .contenedor-telefono {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+
+            .mitad {
+                width: 100%;
+                height: 30%;
+                display: flex;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 11%;
+                color: wheat;
+            }
+
+            .telefono {
+                width: 34%;
+                height: 77%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .info_tel {
+                    text-align: center;
+                }
+            }
+
+            span {
+
+                font-size: 38px;
+                justify-content: center;
+                display: flex;
+                color: white;
+            }
+
+            div {
+                margin-right: 5%;
+                font-size: 12px;
+                margin-top: 15px;
+                justify-content: center;
+                display: flex;
+                color: white;
+                text-align: center;
+            }
+        }
+
+        .contenedor-nosotros {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .urbana {
+                width: 80%;
+                height: 20%;
+                color: white;
+                display: flex;
+                font-size: 23px;
+            }
+
+            .nosotros {
+                width: 100%;
+                height: 20%;
+                color: white;
+                display: flex;
+                padding-left: 10%;
+            }
+        }
+
+
+    }
+
+    .telefonos {
+
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+
+        .titulo_telefono {
+            color: white;
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 35px;
+
+        }
+
+        .conte_telefono {
+            display: none;
+
+        }
+    }
+
+}
+
+#Buscador {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px#908d8d;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    border-radius: 100px;
+    height: 37px;
+}
+
+#sidenav {
+    position: fixed;
+    height: 100%;
+    width: 66%;
+    right: -100% !important;
+    bottom: 0;
+    background-color: black;
+    transition: all .3s ease-in-out;
+    color: white;
+  }
+
+  #sidenav.mostrar {
+    right: 0 !important;
+
+    a{
+        color: white !important;
+    }
+
+  }
+
+  .btn-trigger,
+  .btn-cerrar {
+    font-size: 2em;
+    padding: 0 .4em;
+    background-color: #000000;
+    color: white;
+    font-size: 30px!important;
+    border: black;
+    display: flex;
+    justify-content: end;
+
+  }
+
+  .btn-trigger, .icono_m {
+    display: none;
+
+ 
+} 
+
+.contenedor-btn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.iconoss{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: solid 1px  white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    
+}
+.usuario{
+    width: 100%;
+    height: 38dvh;
+    display: flex;
+    gap: 5%;
+    align-items: end;
+    padding-left: 6%;
+}
+
+
+ 
+@media only screen and (max-width: 768px) {
+    .cont_titulo {
+        width: 100%;
+        height: 250px;
+        display: flex;
+    }
+
+    header{
+        height: 66px;
+
+        .icono{
+            display: none;
+        }
+    }
+    .abajo {
+        display: none !important;
+    }
+
+    #Buscador{
+        display: none!important;
+    }
+
+  
+    .barra{
+        height: 100%!important;
+    }
+
+
+    
+    .botones {
+        display: none;
+    }
+   
+    
+    
+    .btn-close {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        border: 0;
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .mostrarmenu {
+        right: 0 !important;
+        box-shadow: -60px 0 1400px 10000px rgba(0, 0, 0, 0.411);
+    }
+    
+   
+    
+    li {
+        width: 100%;
+        height: 50px;
+        color: black;
+        font-size: 20px;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    
+        a {
+            color: black;
+        }
+    }
+    
+    li:hover {
+        border-left: solid 5px white;
+        cursor: pointer;
+    }
+    
+    .icon_s {
+        font-size: 20px;
+    }
+    
+    .icono_l {
+        font-size: 50px;
+        color: white;
+    }
+    
+    .boton {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-trigger, .icono_m {
+        display: flex;
+        background-color: #ffffff; /* Verde */
+        color: black;
+        border: none;
+        font-size: 48px!important;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        justify-content: end;
+        align-items: center;
+        width: 25% !important;
+      }
+
+      /* Hover */
+      .btn-trigger:hover, .icono_m:hover {
+        background-color: #ffffff; /* Verde más oscuro */
+        transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+      }
+
+      .iconos {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .iconos .icono_m {
+        margin-left: 10px;
+      }
+
+      /* Contenedor para los botones */
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    
+
+    footer {
+        margin-top: none;
+        width: 100%;
+        height: 1000px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+
+        .tres {
+            height: 34%;
+            width: 100%;
+            background-color: #033346;
+
+
+            .tit {
+                display: flex;
+                width: 100%;
+                height: 20%;
+                justify-content: center;
+                align-items: center;
+
+
+                .letra {
+                    display: flex;
+                    width: 90%;
+                    height: 72%;
+                    border-bottom: 1px solid white;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                }
+            }
+
+            .contenedor-cuadrado {
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 2%;
+
+                .lugar {
+                    width: 80%;
+                    height: 13%;
+                    color: white;
+                    font-size: 10px;
+                    display: flex;
+                    align-items: center;
+                    border: solid 1px white;
+
+
+                    .iconos {
+                        height: 100%;
+                        width: 17%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+
+            .contenedor-telefono {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+
+                .mitad {
+                    width: 100%;
+                    height: 35%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: wheat;
+                    padding-top: 5%;
+                }
+
+                .telefono {
+                    width: 34%;
+                    height: 77%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .info_tel {
+                        text-align: center;
+                    }
+                }
+
+                span {
+
+                    font-size: 38px;
+                    justify-content: center;
+                    display: flex;
+                    color: white;
+                }
+
+                div {
+                    margin-right: 5%;
+                    font-size: 12px;
+                    margin-top: 15px;
+                    justify-content: center;
+                    display: flex;
+                    color: white;
+                    text-align: center;
+                }
+            }
+
+            .contenedor-nosotros {
+                width: 100%;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                .urbana {
+                    width: 80%;
+                    height: 20%;
+                    color: white;
+                    display: flex;
+                    font-size: 23px;
+                }
+
+                .nosotros {
+                    width: 100%;
+                    height: 20%;
+                    color: white;
+                    display: flex;
+                    padding-left: 10%;
+                }
+            }
+
+
+        }
+
+        .telefonos {
+
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+
+
+            .titulo_telefono {
+                color: white;
+
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 20px;
+                margin: 20px;
+                margin-left: 35px;
+
+            }
+
+            .conte_telefono {
+                display: none;
+
+
+
+            }
+        }
+
+    }
+
+}

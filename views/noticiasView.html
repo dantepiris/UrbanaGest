@@ -1,0 +1,55 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+        </head>
+<!-- {{PROJECT_MODE}}-->
+<body>
+
+@extern('header')   
+@extern('menu') 
+@extern('menucelular')  
+
+
+aca estan todas las noticiasssssssssssssss
+
+<div id="contenido"></div>
+
+<script type="text/javascript">
+    getAllUsers().then((data) => {
+        console.log(data); // Verifica qué devuelve la API
+
+        if (Array.isArray(data)) {
+            data.forEach((e) => {
+                contenido.innerHTML += `
+                
+                    ${e.titulo}
+                    <!-- boton de leer más -->
+                    <a href="noticia?token=${e.token_noticia}" class="noticia_verMas">Leer más</a>
+                `;
+            });
+        } else {
+            console.error("La API no devolvió un array como se esperaba:", data);
+        }
+    }).catch(error => {
+        console.error("Hubo un error al obtener los datos:", error);
+    });
+
+    async function getAllUsers() {
+        try {
+            /* Consulta a la API */
+            const response = await fetch("https://urbanagest.tecnica3.com.ar/api/Users/novedades");
+
+            /* Convierte la respuesta a formato JSON */
+            const data = await response.json();
+
+            return data;
+        } catch (error) {
+            console.error("Error al hacer fetch:", error);
+        }
+    }
+</script>
+
+
+@extern('footer')
+
+@extern('footer')

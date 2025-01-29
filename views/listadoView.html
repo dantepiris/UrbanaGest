@@ -1,0 +1,164 @@
+@extern('header')
+	<!-- {{PROJECT_SECTION}} -->	
+		<div id="header">
+			
+			<div id="hero">
+				<a href="landing">
+				<img src="img/system/hero.png">
+				</a>
+			</div>
+
+
+			<div id="control">
+							
+				<a href="perfil" class="btn__register">Perfil</a>
+				<a href="logout" class="btn__register">Cerrar sesión</a>
+
+			</div>
+
+		</div>
+
+		<div id="content">
+			
+			<div id="window__of_list">
+				
+
+				<div id="window__list">	
+
+					<h1>Listado</h1>
+
+
+					<!-- BEGIN: Plantilla para hacer una fila -->
+					<!-- Plantilla para hacer una fila -->
+					<template id="tpl__row">
+						
+						<div class="row">
+							<img class="column avatar" src="" alt="" width="20px">
+							<div class="column nombre">Aqui va el nombre</div>
+							<div class="column apellido">Aqui va el apellido</div>
+							<div class="column email">Email</div>
+						</div>
+
+					</template>
+					<!-- END: Plantilla para hacer una fila -->
+
+
+					<!-- BEGIN: Plantilla para hacer una tarjeta -->
+					<template id="tpl__row_card">
+						
+						<div class="row_card">
+							<img class="column avatar" src="" alt="" width="20px">
+							<div class="column nombre">Aqui va el nombre</div>
+							<div class="column apellido">Aqui va el apellido</div>
+							<div class="column email">Email</div>
+						</div>
+
+					</template>
+					<!-- END: Plantilla para hacer una tarjeta -->
+
+					<button id="avanzar">Siguiente</button>
+					<!-- Aqui irán apareciendo los elementos -->
+					<div id="stream__listado">
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		
+
+	<script type="text/javascript">
+
+
+		/*< Variables para hacer la paginación*/
+		let pagina = 0;
+		let cantidad = 10;
+
+		/*< muestra un listado inicial*/
+		showPage();
+
+		/*< al presionar el botón de avanzar se cambia de página dentro de la lista*/
+		avanzar.addEventListener("click", e => {
+			pagina = pagina +cantidad;
+
+			/*< muestra una lista con elementos nuevos*/
+			showPage();
+		})
+
+
+		/**
+		 * 
+		 * @brief limpia el listado y carga uno nuevo
+		 * 
+		 * */
+		function showPage(){
+
+			stream__listado.innerHTML = "";
+			// Llamada a la función asincrona que obtiene un listado de usuarios
+			getAllUsers(pagina,cantidad).then(data => {
+
+				/*< si es cualquier cosa menos 408 */
+				if(data.errno != 408){
+					// Recorre el listado de usuarios fila por fila
+					data.forEach( info => {
+
+						// Crea e inserta una fila dentro de stream__listado
+						addRow(info);
+					});
+				}else{
+
+					avanzar.innerHTML = ""
+
+					stream__listado.innerHTML = "No hay información que listar";
+				}
+				
+			})
+		}
+
+		/**
+	 	 * 
+	 	 * @brief Agrega una fila dentro de stream__listado
+	 	 * @param object data fila con datos de usuario
+	 	 * 
+	 	 * */
+		function addRow(data){
+
+			/*< captura el contenido de la template */
+			const tpl = tpl__row_card.content;
+
+			/*< clona la plantilla como un nodo completo*/
+			const clon = tpl.cloneNode(true);
+
+			/*< alteramos el contenido del clon con los valores de data */
+			clon.querySelector(".row_card").setAttribute("id-user", data.id);
+			clon.querySelector(".avatar").src = data.avatar;
+			clon.querySelector(".nombre").textContent = data.first_name;
+			clon.querySelector(".apellido").textContent = data.last_name;
+			clon.querySelector(".email").textContent = data.email;
+
+			/*< inserta el clon modificado dentro de stream__listado */
+			stream__listado.appendChild(clon);
+		}
+
+		/**
+	 	 * 
+	 	 * @brief Retorna un listado de usuarios en formato JSON
+	 	 * @param int inicio desde que fila inicia.
+	 	 * @param int cantidad cantidad de filas a listar
+	 	 * @return json listado de usuarios
+	 	 * 
+	 	 * */
+		async function getAllUsers(inicio, cantidad){
+			/*< consulta a la API */
+			const response = await fetch("api/users/getAll/?inicio="+inicio+"&cantidad="+cantidad);
+	 		/*< convierte la respuesta a formato json */
+			const data = await response.json();
+
+			return data;
+		}
+
+	</script>
+
+@extern('footer')

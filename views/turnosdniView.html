@@ -1,0 +1,98 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+        </head>
+<!-- {{PROJECT_MODE}}-->
+<body>
+
+@extern('header')   
+@extern('menu') 
+@extern('menucelular')  
+
+
+
+
+<form method="POST">
+    DNI:<br>
+    <input type="number" name="txt_dni" placeholder="Ingrese DNI" required><br>
+
+    Fecha:<br>
+    <div id="fechas" required>
+        <!-- Las fechas se llenarán mediante JavaScript -->
+    </div><br>
+
+    Horarios disponibles:<br>
+    <select id="horarios" name="horarios" required>
+        <!-- Los horarios se llenarán mediante JavaScript -->
+    </select><br>
+
+    <input type="submit" name="btn_turno"><br>
+</form>
+
+<script>
+    // Función que carga y muestra las fechas en radio buttons
+    async function cargarFechas() {
+        const divFechas = document.getElementById("fechas");
+
+        try {
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/listadofechas`);
+            const data = await response.json();
+
+            // Crear un radio button por cada fecha recibida
+            data.forEach(item => {
+                const fecha = item.fecha; // Acceder a la propiedad 'fecha' del objeto
+
+                const radio = document.createElement("input");
+                radio.type = "radio";
+                radio.name = "fecha";  // Solo un radio button puede estar seleccionado por grupo
+                radio.value = fecha;  // Asignar la fecha como valor del radio button
+                radio.id = fecha; // Añadir un id para el radio button
+
+                const label = document.createElement("label");
+                label.textContent = fecha;  // Mostrar la fecha en texto
+                label.setAttribute("for", fecha); // Asociar el label con el radio button
+
+                // Añadir el radio button y el label al div
+                divFechas.appendChild(radio);
+                divFechas.appendChild(label);
+                divFechas.appendChild(document.createElement("br"));  // salto de línea
+
+                // Añadir un evento para cuando se seleccione una fecha
+                radio.addEventListener("change", () => cargarHorarios(fecha));
+            });
+        } catch (error) {
+            console.error('Error al cargar las fechas:', error);
+        }
+    }
+
+    // Función que carga y muestra los horarios disponibles para una fecha seleccionada
+    async function cargarHorarios(fechaSeleccionada) {
+        const selectHorarios = document.getElementById("horarios");
+        selectHorarios.innerHTML = ""; // Limpiar los horarios previos
+
+        try {
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/busqueda/?fecha=${fechaSeleccionada}`);
+            const data = await response.json();
+
+            // Crear una opción por cada horario recibido
+            data.forEach(item => {
+                const horario = item.horario; // Acceder a la propiedad 'horario' del objeto
+
+                const option = document.createElement("option");
+                option.value = horario;  // Asignar el horario como valor de la opción
+                option.textContent = horario;  // Mostrar el horario en texto
+
+                // Añadir la opción al select
+                selectHorarios.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar los horarios:', error);
+        }
+    }
+
+    // Llamar a la función cuando se carga la página
+    window.onload = cargarFechas;
+</script>
+
+
+@extern('footer')

@@ -1,0 +1,73 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+        </head>
+
+<body>
+
+@extern('header')   
+<!--{{email}} -->
+
+@extern('menu') 
+
+@extern('menucelular')  
+
+
+	Bienvenido admin <br>
+	aca se van a mostrar todas la noticias <br>
+		<a href="logout">Cerrar sesión</a>
+
+
+
+		<a href="crearadmin">crear noticias</a>
+
+		<a href="vereventos">ver eventos</a>
+
+		<a href="creareventos">crear eventos</a>
+
+		
+
+
+
+<main id="contenido">
+	
+
+</main>
+		
+
+	<script type="text/javascript">
+
+
+		listadonoticia().then((data)=>{
+
+			console.log(data);
+
+			data.forEach((e)=>{
+
+				contenido.innerHTML += `
+		
+                
+                    ${e.titulo}
+
+                   <a href="editaradmin?token=${e.token_noticia}">editar</a>
+          
+			`
+
+
+			})
+
+
+		});
+
+		    async function listadonoticia(valor) {
+
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/listadonoticia`);
+            const data = await response.json();
+            return data;
+        }
+
+
+
+	</script>
+
+	@extern('footer')

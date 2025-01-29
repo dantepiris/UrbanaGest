@@ -1,0 +1,28 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+    </head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')
+<form method="POST">
+    Título:<br><input type="text" name="titulo_txt" value="{{TITULO}}" placeholder="Título"><br>
+
+    Fecha:<br><input type="date" name="fecha_txt" value="{{FECHA}}"><br>
+
+    Tipo de novedad:<br>
+
+    <input type="text" name="optionSelect" id="optionSelect" value="{{TIPO}}" placeholder="Ingrese novedad">
+ <br>
+
+    URL img:<br><input type="text" name="img_url" value="{{IMG_URL}}" placeholder="Ingresa URL de la imagen"><br>
+
+    Información<br>
+    <textarea name="mensaje_txt" rows="10" cols="50" placeholder="Escribe aquí tus comentarios">{{MENSAJE}}</textarea><br>
+
+    <input type="submit" name="btn_publicacion" value="Guardar cambios">
+</form>
+<!-- {{TOKEN}} -->
+
+
+@extern('footer')

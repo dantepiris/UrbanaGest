@@ -1,0 +1,58 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+    </head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')
+<a href="crearadmin">crear noticias</a>
+
+<a href="paneladmin">panel noticias</a>
+
+		<a href="creareventos">crear eventos</a>
+
+
+
+
+		
+<main id="contenido">
+	
+
+</main>
+		
+
+	<script type="text/javascript">
+
+
+		listeventos().then((data)=>{
+
+			console.log(data);
+
+			data.forEach((e)=>{
+
+				contenido.innerHTML += `
+		
+                
+                    ${e.titulo}
+          
+			`
+
+
+			})
+
+
+		});
+
+		    async function listeventos(valor) {
+
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/listeventos`);
+            const data = await response.json();
+            return data;
+        }
+
+
+
+	</script>
+
+
+@extern('footer')

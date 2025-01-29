@@ -1,0 +1,58 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+<link rel="stylesheet" type="text/css" href="views/static/css/agregarpublicaciones">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')
+	
+<a href="paneladmin">panel noticias</a>
+		<a href="vereventos">ver eventos</a>
+
+		<a href="creareventos">crear eventos</a>
+
+aca donde el admin crea las cosas
+
+<br>
+
+
+ <form method="POST">
+
+	titulo:<br><input type="text" name="titulo_txt" placeholder="Titulo"><br>
+
+	fecha:<br><input type="date" name="fecha_txt"><br>
+
+	tipo de novedad:<br>
+	
+
+
+    <input type="text" name="optionSelect" id="optionSelect" placeholder="Ingrese novedad">
+ <br>
+  url img:<br><input type="text" name="img_url" placeholder="ingreser url img"><br>
+
+  iformacion<br>
+
+    <textarea name="mensaje_txt" rows="10" cols="50" placeholder="Escribe aquí tus comentarios"></textarea><br>
+
+    <input type="submit" name="btn_publicacion">
+
+	
+</form> 
+
+
+
+@extern('footer')	

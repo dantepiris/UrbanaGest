@@ -1,0 +1,54 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+</head>
+<!-- {{PROJECT_NAME}}-->
+<!-- {{PROJECT_MODE}}-->
+ <!-- {{TOKEN}} -->
+<body>
+
+
+
+@extern('header')   
+@extern('menu') 
+@extern('menucelular')  
+
+<div id="contenido"></div>
+
+<script type="text/javascript">
+    // Función para obtener el token del URL
+    function getTokenFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('token');
+    }
+
+    // Obtener la noticia con el token del URL
+    noticia().then((data) => {
+        console.log(data);
+
+        const e = data[0];
+        contenido.innerHTML += `
+            ${e.titulo}
+            ${e.fecha}
+            ${e.img}
+        `;
+    });
+
+    async function noticia() {
+        const token = getTokenFromUrl();
+        if (!token) {
+            console.error("No token found in URL");
+            return;
+        }
+
+        /* Consulta a la API */
+        const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/publicacion/?token=${token}`);
+        
+        /* Convierte la respuesta a formato JSON */
+        const data = await response.json();
+
+        return data;
+    }
+</script>
+
+@extern('footer')

@@ -1,0 +1,62 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+        </head>
+<!-- {{PROJECT_MODE}}-->
+<body>
+
+@extern('header')   
+@extern('menu') 
+@extern('menucelular')  
+
+
+aca estan todos los eventos
+
+ <form method="POST">
+
+       ingrese email <input type="text" name="txt_email" id="email"><br>
+       <input type="submit" name="btn_suscriptor">
+         
+ </form>
+
+ <div id="contenido"></div>
+
+
+ <script type="text/javascript">
+
+
+    listeventos().then((data)=>{
+
+      console.log(data);
+
+      data.forEach((e)=>{
+
+        contenido.innerHTML += `
+
+        ${e.titulo}<br>
+
+       `
+
+
+
+      })
+
+
+
+    });
+
+    async function listeventos(){
+
+      /*< consulta a la API */
+      const response = await fetch("https://urbanagest.tecnica3.com.ar/api/Users/listeventos");
+
+      /*< convierte la respuesta a formato json */
+      const data = await response.json();
+
+      return data;
+    }
+
+  </script>
+
+
+@extern('footer')

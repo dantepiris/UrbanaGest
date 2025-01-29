@@ -1,0 +1,309 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+<link rel="stylesheet" type="text/css" href="views/static/css/iinmueblescomp.css">
+<link rel="stylesheet" type="text/css" href="views/static/css/material-icons.css">
+<link rel="stylesheet" type="text/css" href="views/static/css/fawesome-all.css">
+
+        </head>
+
+<body>
+
+@extern('header')   
+<!--{{email}} -->
+
+@extern('menu') 
+@extern('menucelular')  
+
+
+
+	<!-- <div id="listado_boleta"> </div> -->
+      <main class="scroll-y altura-max">
+        <section class="bodyIzq">
+            <div class="headIzq">
+                <div class="headtitle">Inmuebles</div>
+            </div>
+            <div class="mainIzq"> 
+
+    <div class="bodyIzqTop">
+        <div class="divCard">
+            <!-- El contenido de estas etiquetas se actualizará dinámicamente con JavaScript -->
+            <div class="cardText">
+                Partida Municipal Nro: <!-- Aquí se insertará el número de partida -->
+            </div>
+            <div class="cardText">
+                <b>Titular:</b> <!-- Aquí se insertará el nombre del titular -->
+            </div>
+            <div class="cardText">
+                <b>Domicilio:</b> <!-- Aquí se insertará el domicilio -->
+            </div>
+            <div class="cardText">
+                <b>Tipo de vivienda:</b> <!-- Aquí se insertará el tipo de vivienda -->
+            </div>
+            <div class="cardText">
+                <b>Superficie:</b> <!-- Aquí se insertará la superficie -->
+            </div>
+            <div class="cardText">
+                <b>Metros de frente:</b> <!-- Aquí se insertarán los metros de frente -->
+            </div>
+        </div>
+
+        <div class="contPrec">
+            <div class="divDer">
+                <!-- Aquí se actualizará el primer vencimiento y precio -->
+                <div class="vencimiento">
+                    1er.Vto: <!-- Aquí se insertará el primer vencimiento -->
+                </div>
+                <div class="precio">
+                    <!-- Aquí se insertará el primer precio -->
+                </div>
+            </div>
+            <div class="divDer2">
+                <!-- Aquí se actualizará el segundo vencimiento y precio -->
+                <div class="vencimiento">
+                    2do.Vto: <!-- Aquí se insertará el segundo vencimiento -->
+                </div>
+                <div class="precio">
+                    <!-- Aquí se insertará el segundo precio -->
+                </div>
+            </div>
+        </div>
+
+        <div class="paymentCard">
+            <div class="payCard">
+                Pagar con tarjeta
+            </div>
+            <div class="monto">
+                Monto
+            </div>
+            <div class="contMonto">
+                <!-- Aquí se insertará el monto del mes -->
+                <div class="montoBox">
+                    Mes de Octubre: <!-- Aquí se insertará el monto dinámico -->
+                </div>
+            </div>
+            <div class="monto">
+                Metodo de pago
+            </div>
+            <div class="contTarjeta">
+                <div class="tarjetaBox">
+                    <div class="tarjeta">
+                        <div class="contInput">
+                            <input type="radio" name="tarjeta">
+                        </div>
+                        <div class="contNum">
+                            Termina en: ...8712
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="contInput">
+                            <input type="radio" name="tarjeta">
+                        </div>
+                        <div class="contNum">
+                            Termina en: ...8012
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="contInput">
+                            <input type="radio" name="tarjeta">
+                        </div>
+                        <div class="contNum">
+                            Termina en: ...4112
+                        </div>
+                    </div>
+
+                    <div class="contAgregar">
+                        <button id="openPopup" class="agregar">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+            <div class="nose"></div>
+
+        </section>
+        <section class="bodyDer">
+            <div class="historial">
+                Historial
+            </div>
+            <div class="tituloEstado">
+                <div class="miniTitulo">
+                    Monto
+                </div>
+                <div class="miniTitulo">
+                    Mes
+                </div>
+                <div class="miniTitulo">
+                    Año
+                </div>
+                <div class="miniTitulo">
+                    Estado
+                </div>
+
+            </div>
+            <div class="contDatos">
+                <div class="dato">$79.236,77</div>
+                <div class="dato">Agosto</div>
+                <div class="dato">2024</div>
+                <div class="dato">Pagado</div>
+            </div>
+            <div class="contDatos">
+                <div class="dato">$81.516,47</div>
+                <div class="dato">Julio</div>
+                <div class="dato">2024</div>
+                <div class="dato">Pagado</div>
+            </div>
+            <div class="contDatos">
+                <div class="dato">$82.416,51</div>
+                <div class="dato">Junio</div>
+                <div class="dato">2024</div>
+                <div class="dato">Pagado</div>
+            </div>
+            <div class="contDatos">
+                <div class="dato">$83.211,84</div>
+                <div class="dato">Mayo</div>
+                <div class="dato">2024</div>
+                <div class="dato">Pagado</div>
+            </div>
+            <div class="contDatos">
+                <div class="dato">$77.311,35</div>
+                <div class="dato">Abril</div>
+                <div class="dato">2024</div>
+                <div class="dato">Pagado</div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="popup" class="popup">
+        <form method="POST">
+            <div class="popup-content">
+                <span class="close" id="closePopup">&times;</span>
+                <div class="pago">
+                    <div class="wave-group">
+                        <input required="" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char" style="--index: 0">N</span>
+                            <span class="label-char" style="--index: 1">u</span>
+                            <span class="label-char" style="--index: 2">m</span>
+                            <span class="label-char" style="--index: 3">e</span>
+                            <span class="label-char" style="--index: 4">r</span>
+                            <span class="label-char" style="--index: 5">o</span>
+                        </label>
+                    </div>
+                    <div class="mitad">
+                        <div class="mitad1">
+                            <div class="wave-group">
+                                <input required="" type="text" class="input white">
+                                <span class="bar"></span>
+                                <label class="label">
+                                    <span class="label-char" style="--index: 0">V</span>
+                                    <span class="label-char" style="--index: 1">t</span>
+                                    <span class="label-char" style="--index: 2">o</span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="mitad1">
+                            <div class="wave-group">
+                                <input required="" type="password" class="input" maxlength="3">
+                                <span class="bar"></span>
+                                <label class="label">
+                                    <span class="label-char" style="--index: 0">C</span>
+                                    <span class="label-char" style="--index: 1">V</span>
+                                    <span class="label-char" style="--index: 2">C</span>
+                                    <span class="label-char" style="--index: 3">/</span>
+                                    <span class="label-char" style="--index: 4">C</span>
+                                    <span class="label-char" style="--index: 5">V</span>
+                                    <span class="label-char" style="--index: 6">V</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name">
+                        <div class="wave-group">
+                            <input required="" type="text" class="input">
+                            <span class="bar"></span>
+                            <label class="label">
+                                <span class="label-char" style="--index: 0">N</span>
+                                <span class="label-char" style="--index: 1">o</span>
+                                <span class="label-char" style="--index: 2">m</span>
+                                <span class="label-char" style="--index: 3">b</span>
+                                <span class="label-char" style="--index: 4">r</span>
+                                <span class="label-char" style="--index: 5">e</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="contAgregar2">
+                        <input type="submit" class="agregar" value="Agregar">
+                    </div>
+
+                </div>
+            
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+<script src="views/js/mostrarboleta.js"></script>
+	<script type="text/javascript">
+
+
+        const openPopup = document.getElementById('openPopup');
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
+
+        openPopup.addEventListener('click', () => {
+            popup.style.display = 'flex'; // Muestra el popup
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none'; // Oculta el popup
+        });
+
+        // También se puede cerrar el popup al hacer clic fuera de él
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+  
+
+        let sidenavMenu = document.querySelector('#sidenav')
+    
+        function DisplaySIdenav() {
+          sidenavMenu.classList.add('mostrar')
+        }
+        function ocultarSidenav() {
+          sidenavMenu.classList.remove('mostrar')
+        }
+    
+
+
+			    async function ver_residencia(valor) {
+
+            const response = await fetch(`https://urbanagest.tecnica3.com.ar/api/Users/listadoboletas/?txt_nro_residencia=${valor}`);
+            const data = await response.json();
+            return data;
+        }
+
+
+
+		
+
+	</script>
+	
+</body>
+</html>
+@extern('footer')

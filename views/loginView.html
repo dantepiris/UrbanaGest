@@ -1,0 +1,57 @@
+<!-- {{PROJECT_SECTION}} 
+{{PROJECT_MODE}}-->
+
+<link rel="stylesheet" type="text/css" href="views/static/css/login.css">
+
+    </head>
+<!-- {{PROJECT_MODE}} -->
+<body>
+
+@extern('header')
+
+
+
+<!-- 
+					<form action="" method="POST">{{MSG_ERROR}}
+
+						<div id="error_msg"></div>
+
+						<input id="txt_email" type="email" name="txt_email" placeholder="email" required>
+						<input id="txt_pass" type="password" name="txt_contraseña" placeholder="contraseña" required>
+						<input id="btn_login" type="submit" name="btn__login" value="Iniciar">
+					</form> -->
+
+
+					  <div class="contenedor">
+        <div class="contenedor-register">
+            <div class="containern1">
+                <div class="imagen">
+                    <img src="img/system/UrbanaGest (1).png" alt="">
+                </div>
+            </div>
+          <div class="containern">
+
+          	{{MSG_ERROR}}
+
+						<div id="error_msg"></div>
+
+            <form id=""method="POST">
+                <h3>Iniciar Sesion</h3>
+                	<input id="txt_email" type="email" name="txt_email" placeholder="email" required>
+                <input id="txt_pass" type="password" name="txt_contraseña" placeholder="contraseña" required>
+                <a href="recuperar-contraseña.html">¿Olvidaste tu contraseña?</a>
+                <div class="btn_box">
+                  <input id="btn_login" type="submit" name="btn__login" value="Iniciar">
+                    <a href="register">¿No tienes cuenta?</a>
+
+                </div>
+            </form>
+
+          </div>
+        </div>
+     </div>
+		
+
+          
+
+@extern('footer')
